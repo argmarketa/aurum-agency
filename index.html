@@ -148,33 +148,37 @@ section { padding:90px 0; position:relative; }
 /* CTA BUTTON */
 .cta-wrap { position:relative; display:inline-block; animation:fadeUp .8s ease-out .4s both; }
 .cta-ring {
-  position:absolute; inset:-8px; border-radius:20px;
-  border:2px solid rgba(212,175,55,0.4);
-  animation:ringPulse 2.4s ease-in-out infinite;
+  position:absolute; inset:-10px; border-radius:20px;
+  border:2px solid rgba(37,211,102,0.6);
+  animation:ringBlast 1.6s ease-out infinite;
 }
 .cta-ring2 {
-  position:absolute; inset:-16px; border-radius:24px;
-  border:1px solid rgba(212,175,55,0.15);
-  animation:ringPulse 2.4s ease-in-out infinite .6s;
+  position:absolute; inset:-20px; border-radius:26px;
+  border:1px solid rgba(37,211,102,0.3);
+  animation:ringBlast 1.6s ease-out infinite .5s;
 }
-@keyframes ringPulse {
-  0%,100%{transform:scale(1);opacity:.7}
-  50%{transform:scale(1.04);opacity:.2}
+@keyframes ringBlast {
+  0%{transform:scale(1);opacity:.8}
+  100%{transform:scale(1.12);opacity:0}
 }
 .btn-cta {
   position:relative; display:inline-flex; align-items:center; gap:12px;
   padding:18px 36px; border-radius:14px; border:none; cursor:pointer;
-  background:linear-gradient(135deg, #C9A420 0%, #F0CC55 50%, #C9A420 100%);
+  background:linear-gradient(135deg, #1db954 0%, #25d366 40%, #128c7e 100%);
   background-size:200% auto;
-  color:#0a0800; font-family:var(--font-head); font-size:1.05rem; font-weight:700;
+  color:#fff; font-family:var(--font-head); font-size:1.05rem; font-weight:700;
   text-decoration:none; letter-spacing:.04em; text-transform:uppercase;
-  box-shadow:0 16px 40px rgba(201,164,32,0.45);
-  transition:transform .25s ease, box-shadow .25s ease;
-  animation:gradShift 4s linear infinite;
+  box-shadow:0 16px 40px rgba(37,211,102,0.55), 0 0 0 0 rgba(37,211,102,0);
+  transition:transform .2s ease, box-shadow .2s ease;
+  animation:gradShift 3s linear infinite, ctaGlow 1.8s ease-in-out infinite;
   white-space:nowrap;
 }
 @keyframes gradShift { 0%{background-position:0% center} 100%{background-position:200% center} }
-.btn-cta:hover { transform:translateY(-4px) scale(1.03); box-shadow:0 24px 52px rgba(201,164,32,0.6); }
+@keyframes ctaGlow {
+  0%,100%{box-shadow:0 16px 40px rgba(37,211,102,0.55), 0 0 0 0 rgba(37,211,102,0.4)}
+  50%{box-shadow:0 20px 60px rgba(37,211,102,0.8), 0 0 0 14px rgba(37,211,102,0)}
+}
+.btn-cta:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 28px 64px rgba(37,211,102,0.75); }
 .btn-cta .wa-ico { width:20px; height:20px; fill:currentColor; }
 
 .hero__badges {
@@ -514,9 +518,9 @@ footer .ft-gold { color:var(--gold); }
     </div>
 
     <div class="hero__badges">
-      <div class="badge">⚡ <strong>72hs</strong> para primeros resultados</div>
-      <div class="badge">🔒 <strong>1 panel</strong> por zona geográfica</div>
-      <div class="badge">📊 <strong>Panel</strong> de métricas incluido</div>
+      <div class="badge">⚡ Publicidad corriendo en <strong>menos de 12hs</strong></div>
+      <div class="badge">🏆 Atención de <strong>primer nivel</strong> · máx. 3 clientes</div>
+      <div class="badge">📊 <strong>Portal</strong> de métricas incluido</div>
     </div>
   </div>
 </section>
@@ -538,8 +542,17 @@ footer .ft-gold { color:var(--gold); }
         <span class="stat__label">ARS generados</span>
       </div>
       <div class="stat reveal" style="transition-delay:.3s">
-        <span class="stat__num" data-target="23" data-suffix="">0</span>
-        <span class="stat__label">Paneles activos</span>
+        <span class="stat__num" data-target="3" data-suffix="">0</span>
+        <span class="stat__label">Clientes activos · cupos máximos</span>
+      </div>
+    </div>
+
+    <!-- Graduated panels callout -->
+    <div class="reveal" style="margin-top:28px;padding:20px 28px;border-radius:14px;background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.15);display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <div style="font-size:2rem;line-height:1">🎓</div>
+      <div>
+        <p style="font-size:.95rem;font-weight:700;color:#fff;margin-bottom:4px"><strong style="color:var(--gold-l)">18 paneles</strong> ya escalaron a crecimiento orgánico</p>
+        <p style="font-size:.83rem;color:var(--muted)">Paneles que arrancaron con publicidad paga y hoy generan jugadores sin invertir en ads. El objetivo siempre es que llegues ahí.</p>
       </div>
     </div>
   </div>
@@ -579,10 +592,10 @@ footer .ft-gold { color:var(--gold); }
         <p>Tu propio panel: mensajes del día, cargas confirmadas, monto generado y evolución semanal. Sin Excel, sin esperar reportes.</p>
       </div>
       <div class="card reveal" style="transition-delay:.15s">
-        <div class="card__icon">🔗</div>
+        <div class="card__icon">⚡</div>
         <span class="tag-new">Nuevo</span>
-        <h3>Atribución completa</h3>
-        <p>Sabés exactamente qué anuncio generó qué carga. Meta CAPI server-side para datos precisos y mejor optimización del algoritmo.</p>
+        <h3>Listo en menos de 12 horas</h3>
+        <p>Desde que confirmás el cupo hasta tener publicidad corriendo y jugadores llegando a tu WhatsApp: menos de 12 horas. Sin esperas.</p>
       </div>
       <div class="card reveal" style="transition-delay:.25s">
         <div class="card__icon">🛡️</div>
@@ -598,14 +611,14 @@ footer .ft-gold { color:var(--gold); }
   <div class="container">
     <div class="reveal" style="text-align:center">
       <div class="s-tag">✦ El proceso</div>
-      <h2 class="s-title">De cero a resultados en 72 horas</h2>
-      <p class="s-sub" style="margin:0 auto 60px">Sin configuraciones eternas. Configuramos todo nosotros.</p>
+      <h2 class="s-title">Publicidad corriendo en menos de 12 horas</h2>
+      <p class="s-sub" style="margin:0 auto 60px">Desde que confirmás el cupo, configuramos todo nosotros. Vos no movés un dedo.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="step__num">01</div>
-        <h3>Te conectamos</h3>
-        <p>Configuramos los anuncios, las líneas de WhatsApp, el pixel y tu portal de métricas. En 72hs ya tenés todo activo.</p>
+        <h3>Te incorporamos</h3>
+        <p>Configuramos los anuncios, las líneas de WhatsApp, el pixel y tu portal de métricas. En menos de 12 horas ya tenés todo activo.</p>
       </div>
       <div class="step reveal" style="transition-delay:.15s">
         <div class="step__num">02</div>
@@ -766,7 +779,7 @@ footer .ft-gold { color:var(--gold); }
           Quiero escalar mi panel YA →
         </a>
       </div>
-      <p style="margin-top:20px;font-size:.82rem;color:var(--muted)">⚡ Respuesta en menos de 2 horas · Solo 2 cupos disponibles</p>
+      <p style="margin-top:20px;font-size:.82rem;color:var(--muted)">⚡ Publicidad corriendo en menos de 12hs · Solo 2 cupos disponibles</p>
     </div>
   </div>
 </section>
@@ -775,7 +788,7 @@ footer .ft-gold { color:var(--gold); }
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="container">
-    © 2025 <span class="ft-gold">Aurum Growth</span> · Especialistas en iGaming · Argentina
+    © 2026 <span class="ft-gold">Aurum Growth</span> · Especialistas en iGaming · Argentina
   </div>
 </footer>
 
@@ -892,8 +905,8 @@ const cta = document.getElementById('hero-cta');
 function shake() {
   if (!cta) return;
   cta.style.animation = 'none';
-  cta.style.animation = 'ctaShake .5s ease, gradShift 4s linear infinite';
-  setTimeout(() => { cta.style.animation = 'gradShift 4s linear infinite'; }, 550);
+  cta.style.animation = 'ctaShake .5s ease, gradShift 3s linear infinite, ctaGlow 1.8s ease-in-out infinite';
+  setTimeout(() => { cta.style.animation = 'gradShift 3s linear infinite, ctaGlow 1.8s ease-in-out infinite'; }, 550);
 }
 setInterval(shake, 6000);
 
