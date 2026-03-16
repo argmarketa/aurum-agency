@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Facebook Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1981735439448520');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1981735439448520&ev=PageView&noscript=1"/></noscript>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1582689256183123');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1582689256183123&ev=PageView&noscript=1"/></noscript>
 
 <style>
 /* ═══════════════════════════════════════════
@@ -811,7 +811,10 @@ footer .ft-gold { color:var(--gold); }
 const WA_NUMBER  = "5492235300241";
 const WA_MESSAGE = "Hola! Quiero escalar mi panel";
 const WA_LINK    = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
-document.querySelectorAll('.whatsapp-link').forEach(el => el.href = WA_LINK);
+document.querySelectorAll('.whatsapp-link').forEach(el => {
+  el.href = WA_LINK;
+  el.addEventListener('click', () => { fbq('track', 'Lead'); });
+});
 
 // ─── Navbar hide on scroll ─────────────────
 let lastY = 0;
