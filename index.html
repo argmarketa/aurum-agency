@@ -91,7 +91,7 @@ section { padding:90px 0; position:relative; }
   transition:transform .4s ease, opacity .4s ease;
 }
 .nav.hidden { transform:translateY(-100%); opacity:0; }
-.nav__inner { display:flex; align-items:center; justify-content:space-between; }
+.nav__inner { display:flex; align-items:center; justify-content:space-between; position:relative; }
 .nav__logo {
   display:block; width:76px; height:76px; border-radius:14px; overflow:hidden;
   border:1px solid var(--border); background:var(--panel-s);
@@ -411,7 +411,7 @@ footer .ft-gold { color:var(--gold); }
    FLOATING ELEMENTS
 ═══════════════════════════════════════════ */
 .wa-float {
-  position:fixed; bottom:28px; right:28px; width:62px; height:62px; border-radius:50%;
+  position:fixed; bottom:28px; right:28px; width:68px; height:68px; border-radius:50%;
   background:linear-gradient(135deg, #25d366, #128c7e);
   display:flex; align-items:center; justify-content:center;
   color:#fff; z-index:60; text-decoration:none;
@@ -474,7 +474,10 @@ footer .ft-gold { color:var(--gold); }
 
   /* Nav */
   .nav { padding:10px 0; }
-  .nav__logo { width:46px; height:46px; border-radius:10px; }
+  .nav__inner { justify-content:center; }
+  .nav__logo { width:52px; height:52px; border-radius:10px; }
+  .nav__cta { display:none; }
+  /* WA float */
 
   /* Hero */
   .hero { padding:36px 0 44px; }
@@ -541,8 +544,7 @@ footer .ft-gold { color:var(--gold); }
   /* Viewer pill — hide on mobile to avoid overlap with WA float */
   .viewer-pill { display:none; }
 
-  /* WA float */
-  .wa-float { width:54px; height:54px; bottom:24px; right:16px; }
+  .wa-float { width:60px; height:60px; bottom:24px; right:16px; }
 }
 </style>
 </head>
@@ -624,14 +626,6 @@ footer .ft-gold { color:var(--gold); }
       </div>
     </div>
 
-    <!-- Graduated panels callout -->
-    <div class="reveal" style="margin-top:28px;padding:20px 28px;border-radius:14px;background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.15);display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <div style="font-size:2rem;line-height:1">🎓</div>
-      <div>
-        <p style="font-size:.95rem;font-weight:700;color:#fff;margin-bottom:4px"><strong style="color:var(--gold-l)">18 paneles</strong> ya escalaron a crecimiento orgánico</p>
-        <p style="font-size:.83rem;color:var(--muted)">Paneles que arrancaron con publicidad paga y hoy generan jugadores sin invertir en ads. El objetivo siempre es que llegues ahí.</p>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -671,8 +665,8 @@ footer .ft-gold { color:var(--gold); }
       <div class="card reveal" style="transition-delay:.15s">
         <div class="card__icon">⚡</div>
         <span class="tag-new">Nuevo</span>
-        <h3>Listo en menos de 12 horas</h3>
-        <p>Desde que confirmás el cupo hasta tener publicidad corriendo y jugadores llegando a tu WhatsApp: menos de 12 horas. Sin esperas.</p>
+        <h3>Listo en menos de 8 horas</h3>
+        <p>Desde que confirmás el cupo hasta tener publicidad corriendo y jugadores llegando a tu WhatsApp: menos de 8 horas. Sin esperas.</p>
       </div>
       <div class="card reveal" style="transition-delay:.25s">
         <div class="card__icon">🛡️</div>
