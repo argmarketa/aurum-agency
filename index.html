@@ -477,13 +477,14 @@ footer .ft-gold { color:var(--gold); }
   .nav__logo { width:46px; height:46px; border-radius:10px; }
 
   /* Hero */
-  .hero { padding:40px 0 44px; }
+  .hero { padding:36px 0 44px; }
   .hero__scarcity {
-    font-size:.75rem; padding:7px 13px; gap:7px;
+    font-size:.72rem; padding:6px 12px; gap:6px;
     max-width:100%; white-space:normal; text-align:left;
+    line-height:1.5; display:flex; flex-wrap:wrap;
   }
-  .hero h1 { font-size:1.95rem; margin-bottom:16px; }
-  .hero__sub { font-size:.95rem; margin-bottom:28px; }
+  .hero h1 { font-size:1.85rem; margin-bottom:16px; }
+  .hero__sub { font-size:.92rem; margin-bottom:28px; }
 
   /* CTA button — full width on mobile */
   .cta-wrap { display:block; width:100%; }
@@ -540,8 +541,8 @@ footer .ft-gold { color:var(--gold); }
   /* Viewer pill — hide on mobile to avoid overlap with WA float */
   .viewer-pill { display:none; }
 
-  /* WA float — slightly smaller */
-  .wa-float { width:54px; height:54px; bottom:20px; right:20px; }
+  /* WA float */
+  .wa-float { width:54px; height:54px; bottom:24px; right:16px; }
 }
 </style>
 </head>
@@ -571,7 +572,7 @@ footer .ft-gold { color:var(--gold); }
   <div class="container">
     <div class="hero__scarcity">
       <span class="dot"></span>
-      🔥 Últimos <strong>2 cupos</strong> disponibles — Se asignan por orden de llegada
+      🔥 Últimos <strong>2 cupos</strong> disponibles
     </div>
 
     <h1>
